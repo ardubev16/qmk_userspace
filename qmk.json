@@ -1,4 +1,6 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["nuphy/air60_v2/ansi", "ardubev16"]
+    ]
 }
