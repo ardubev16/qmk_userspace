@@ -21,9 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum layer_names {
     _BL,
     _NL,
-    _FL,
+    _ML,
     _QL,
-    _4L,
+    _FL,
     _5L,
     _6L,
 };
@@ -46,46 +46,46 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-// Base Layer (Mac)
+// Base Layer (Mac SW)
 [_BL] = LAYOUT(
     KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    KC_EQL,     KC_BSPC,
     KC_TAB,     KC_Q,       KC_W,       KC_F,       KC_P,       KC_B,       KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_LBRC,    KC_RBRC,    KC_BSLS,
     KC_ESC,     HOME_A,     HOME_R,     HOME_S,     HOME_T,     KC_G,       KC_M,       HOME_N,     HOME_E,     HOME_I,     HOME_O,     KC_QUOT,                KC_ENT,
-    KC_LSFT,    KC_Z,       KC_X,       KC_C,       KC_D,       KC_V,       KC_K,       KC_H,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PGUP,    KC_UP,      KC_PGDN,
-    KC_LCTL,    KC_LGUI,    MO(_NL),                                        KC_SPC,                             KC_LALT,    MO(_FL),    KC_LEFT,    KC_DOWN,    KC_RGHT),
+    _______,    KC_Z,       KC_X,       KC_C,       KC_D,       KC_V,       KC_K,       KC_H,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PGUP,    KC_UP,      KC_PGDN,
+    _______,    _______,    MO(_ML),                                        LT(_NL, KC_SPC),                    MO(_FL),    _______,    KC_LEFT,    KC_DOWN,    KC_RGHT),
 
 // Navigation Layer
 [_NL] = LAYOUT(
-    KC_ESC,     KC_BRID,    KC_BRIU,    MAC_TASK,   MAC_SEARCH, MAC_VOICE,  MAC_DND,        KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_DEL,
-    _______,    _______,    _______,    _______,    _______,    _______,    KC_PASTE,       KC_COPY,    KC_CUT,     KC_UNDO,    _______,    _______,    _______,    _______,
-    _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    KC_H,           KC_J,       KC_K,       KC_L,       _______,    _______,                _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,        KC_PGDN,    KC_PGUP,    KC_END,     _______,    _______,    _______,    _______,
-    _______,    _______,    _______,                                        _______,                                _______,    _______,    _______,    _______,    _______),
+    KC_ESC,     KC_BRID,    KC_BRIU,    MAC_TASK,   MAC_SEARCH, MAC_VOICE,  MAC_DND,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_DEL,
+    _______,    _______,    _______,    _______,    _______,    _______,    KC_PASTE,   KC_COPY,    KC_CUT,     KC_UNDO,    KC_AGIN,    _______,    _______,    _______,
+    _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    KC_H,       KC_J,       KC_K,       KC_L,       CW_TOGG,    _______,                _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     KC_INS,     _______,    _______,    _______,
+    _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
+
+// Media Layer
+[_ML] = LAYOUT(
+    KC_GRV,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SPI,    RGB_MOD,    RGB_VAD,    RGB_VAI,    RGB_HUI,    _______,    SLEEP_MODE, BAT_SHOW,
+    _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    _______,    KC_MPRV,    KC_VOLD,    KC_VOLU,    KC_MNXT,    _______,                DEV_RESET,
+    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SPD,    LNK_BLE1,   LNK_BLE2,   LNK_BLE3,   LNK_RF,     _______,    _______,    _______,
+    _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // Function Layer
 [_FL] = LAYOUT(
     SHIFT_GRV,  KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
-    _______,    LNK_BLE1,   LNK_BLE2,   LNK_BLE3,   LNK_RF,     _______,    _______,    _______,    _______,    _______,    _______,    DEV_RESET,  SLEEP_MODE, BAT_SHOW,
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    MO(6),      RGB_SPD,    RGB_SPI,    _______,    _______,    RGB_VAI,    _______,
-    _______,    _______,    _______,                                        _______,                            _______,    _______,    RGB_MOD,    RGB_VAD,    RGB_HUI),
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
-// QWERTY Layer (Win)
+// QWERTY Layer (Win SW)
 [_QL] = LAYOUT(
     KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    KC_EQL,     KC_BSPC,
     KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_LBRC,    KC_RBRC,    KC_BSLS,
     LCTL_ESC,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,       KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,                KC_ENT,
     KC_LSFT,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PGUP,    KC_UP,      KC_PGDN,
-    KC_LCTL,    KC_LGUI,    KC_LALT,                                        KC_SPC,                             KC_RALT,    MO(_FL),    KC_LEFT,    KC_DOWN,    KC_RGHT),
+    KC_LCTL,    KC_LGUI,    KC_LALT,                                        KC_SPC,                             KC_LALT,    MO(_FL),    KC_LEFT,    KC_DOWN,    KC_RGHT),
 
-// // layer 4 win fn
-// [4] = LAYOUT(
-//     KC_GRV,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
-//     _______,    LNK_BLE1,   LNK_BLE2,   LNK_BLE3,   LNK_RF,     _______,    _______,    _______,    _______,    _______,    _______,    DEV_RESET,  SLEEP_MODE, BAT_SHOW,
-//     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                _______,
-//     MO(5),      _______,    _______,    _______,    _______,    _______,    _______,    MO(6),      RGB_SPD,    RGB_SPI,    _______,    MO(5),      RGB_VAI,    _______,
-//     _______,    _______,    _______,                                        _______,                            _______,    _______,    RGB_MOD,    RGB_VAD,    RGB_HUI),
-//
 // // layer 5 win fn+shift
 // [5] = LAYOUT(
 //     SHIFT_GRV,  KC_BRID,    KC_BRIU,    _______,    _______,    _______,    _______,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    _______,
