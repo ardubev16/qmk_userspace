@@ -57,15 +57,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Navigation Layer
 [_NL] = LAYOUT(
     KC_ESC,     KC_BRID,    KC_BRIU,    MAC_TASK,   MAC_SEARCH, MAC_VOICE,  MAC_DND,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_DEL,
-    _______,    _______,    _______,    _______,    _______,    _______,    KC_PASTE,   KC_COPY,    KC_CUT,     KC_UNDO,    KC_AGIN,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    KC_AGIN,    KC_PASTE,   KC_COPY,    KC_CUT,     KC_UNDO,    _______,    _______,    _______,
     _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    KC_H,       KC_J,       KC_K,       KC_L,       CW_TOGG,    _______,                _______,
     _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     KC_INS,     _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // Media Layer
+// - KC_F20: Microphone Mute
 [_ML] = LAYOUT(
     KC_GRV,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SPD,    RGB_VAD,    RGB_VAI,    RGB_SPI,    RGB_MOD,    _______,    SLEEP_MODE, BAT_SHOW,
+    _______,    _______,    _______,    _______,    _______,    _______,    RGB_VAD,    KC_BRID,    KC_BRIU,    RGB_VAI,    KC_F20,     RGB_MOD,    SLEEP_MODE, BAT_SHOW,
     _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    KC_MPRV,    KC_VOLD,    KC_VOLU,    KC_MNXT,    KC_MPLY,    _______,                DEV_RESET,
     _______,    _______,    _______,    _______,    _______,    _______,    LNK_RF,     LNK_BLE1,   LNK_BLE2,   LNK_BLE3,   KC_MUTE,    _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
