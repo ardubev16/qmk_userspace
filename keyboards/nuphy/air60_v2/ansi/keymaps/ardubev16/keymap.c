@@ -35,15 +35,17 @@ enum layer_names {
 
 // Left-hand home row mods
 #define GUI_A LGUI_T(KC_A)
-#define ALT_R LALT_T(KC_R)
+#define ALT_W LALT_T(KC_W)
 #define CTL_S LCTL_T(KC_S)
 #define SHFT_T LSFT_T(KC_T)
+#define SL_R LT(_SL, KC_R)
 
 // Right-hand home row mods
 #define SFT_N RSFT_T(KC_N)
 #define CTL_E RCTL_T(KC_E)
-#define ALT_I LALT_T(KC_I)
+#define ALT_Y LALT_T(KC_Y)
 #define GUI_O RGUI_T(KC_O)
+#define SL_I LT(_SL, KC_I)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -51,10 +53,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Base Layer (Mac SW)
 [_BL] = LAYOUT(
     KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_EQL,     KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    KC_BSPC,
-    KC_TAB,     KC_Q,       KC_W,       KC_F,       KC_P,       KC_B,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOT,    KC_BSLS,
-    KC_ESC,     GUI_A,      ALT_R,      CTL_S,      SHFT_T,     KC_G,       KC_RBRC,    KC_M,       SFT_N,      CTL_E,      ALT_I,      GUI_O,                  KC_ENT,
+    KC_TAB,     KC_Q,       ALT_W,      KC_F,       KC_P,       KC_B,       _______,    KC_J,       KC_L,       KC_U,       ALT_Y,      KC_QUOT,    _______,    KC_BSLS,
+    KC_ESC,     GUI_A,      SL_R,       CTL_S,      SHFT_T,     KC_G,       _______,    KC_M,       SFT_N,      CTL_E,      SL_I,       GUI_O,                  KC_ENT,
     _______,    KC_Z,       KC_X,       KC_C,       KC_D,       KC_V,       _______,    KC_K,       KC_H,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_UP,      _______,
-    _______,    _______,    MO(_ML),                                        LT(_NL, KC_SPC),                    MO(_SL),    _______,    KC_LEFT,    KC_DOWN,    KC_RGHT),
+    _______,    _______,    MO(_ML),                                        LT(_NL, KC_SPC),                    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_RGHT),
 
 // Navigation Layer
 [_NL] = LAYOUT(
@@ -75,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Symbol Layer
 [_SL] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,                _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    KC_GRV,     KC_TILD,    KC_HASH,    KC_AMPR,    KC_PIPE,    _______,    KC_CIRC,    KC_LCBR,    KC_RCBR,    KC_LBRC,    KC_RBRC,    _______,    _______,
+    _______,    KC_EXLM,    KC_UNDS,    KC_COLN,    KC_EQL,     KC_DLR,     _______,    KC_AT,      KC_LPRN,    KC_RPRN,    KC_UNDS,    KC_SCLN,                _______,
+    _______,    KC_PERC,    KC_QUES,    KC_ASTR,    KC_PLUS,    KC_BSLS,    _______,    KC_SLSH,    KC_MINS,    KC_LABK,    KC_RABK,    KC_DQUO,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // QWERTY Layer (Win SW)
