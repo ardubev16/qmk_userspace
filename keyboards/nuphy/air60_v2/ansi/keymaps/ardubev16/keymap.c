@@ -29,6 +29,8 @@ enum layer_names {
 };
 
 
+#define KC_MICM KC_F20 // Microphone Mute
+
 #define LCTL_ESC LCTL_T(KC_ESC)
 
 // Left-hand home row mods
@@ -63,10 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // Media Layer
-// - KC_F20: Microphone Mute
 [_ML] = LAYOUT(
     KC_GRV,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    RGB_VAD,    KC_BRID,    KC_BRIU,    RGB_VAI,    KC_F20,     RGB_MOD,    SLEEP_MODE, BAT_SHOW,
+    _______,    _______,    _______,    _______,    _______,    _______,    RGB_VAD,    KC_BRID,    KC_BRIU,    RGB_VAI,    KC_MICM,    RGB_MOD,    SLEEP_MODE, BAT_SHOW,
     _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    KC_MPRV,    KC_VOLD,    KC_VOLU,    KC_MNXT,    KC_MPLY,    _______,                DEV_RESET,
     _______,    _______,    _______,    _______,    _______,    _______,    LNK_RF,     LNK_BLE1,   LNK_BLE2,   LNK_BLE3,   KC_MUTE,    _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),

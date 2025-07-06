@@ -19,3 +19,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define QUICK_TAP_TERM 0
 #define PERMISSIVE_HOLD
+
+#define CAPS_WORD_INVERT_ON_SHIFT
